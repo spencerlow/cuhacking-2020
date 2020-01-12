@@ -219,12 +219,16 @@ import tkinter as tk
 # window.title("test")
 
 window = tk.Tk()
-window.geometry("700x250")
+window.geometry("700x300")
 window.title("Murder mystery")
 window.resizable(False, False)
 window.configure(background="light grey")
 
-vIndex = 1
+textoutput = tk.Label(window, text = "By: Andrew Hall, Atharva Kasture, Mitansh Desai, Spencer Low", bg="dark grey" ,fg="black", font=("Consolas",8,"bold"))
+textoutput.place(x=100,y=230)
+textoutput = tk.Label(window, text = "Our guess:\nJason murders Veronica", bg="dark grey" ,fg="black", font=("Consolas",8,"bold"))
+textoutput.place(x=100,y=250)
+
 
 def V_transfer():
     print("success")
