@@ -12,30 +12,34 @@ event = ""
 guest = ""
 
 #yeet
-Rob = {}
-Veronica = {}
-Jason = {}
-Thomas = {}
-Kristina = {}
-Marc_Andre = {}
-Dave = {}
-Salina = {}
-Harrison = {}
+Rob = []
+Veronica = []
+Jason = []
+Thomas = []
+Kristina = []
+Marc_Andre = []
+Dave = []
+Salina = []
+Harrison = []
 
 ##Variables that are used to count as timers
 line_count = 0
 
 while line != "":
-    time = " "
     if line_count == 0:
         line_count +=1
     else:
         if line_count == 1:
             #This line reads in the time stamp line and
+            time = ""
+            del rough[:]
             for a in line:
                 rough.append(a)
+            if len(rough) == 1:
+                break
             for x in range (5,15):
                 time += rough[x]
+            time = time.strip("\"")
             time = time.strip()
             line_count +=1
             print(time)
@@ -57,6 +61,7 @@ while line != "":
             id = id[1]
             device_id = id.strip(",")
             device_id = device_id.strip("\"")
+            device_id = device_id.strip("")
             line_count +=1
             print(device_id)
         elif line_count == 4:
@@ -66,7 +71,7 @@ while line != "":
             event = id.strip(" ")
             event = event.replace(",", " ")
             event = event.replace("\""," ")
-            event = event.strip(" ")
+            event = event.rstrip()
             line_count +=1
             print(event)
         elif line_count == 5:
@@ -76,17 +81,22 @@ while line != "":
             guest = id.replace("\"", " ")
             guest = guest.strip()
             line_count +=1
-            print(guest)
+            if guest == "Rob":
+                Rob.append(time)
+                Rob.append(device)
+                Rob.append(device_id)
+                Rob.append(event)
+                Rob.append(guest)
+            if guest == "Veronica":
+                Veronica.append(time)
+                Veronica.append(device)
+                Veronica.append(device_id)
+                Veronica.append(event)
+                Veronica.append(guest)
+
     ##This line resets the count
     if line_count == 6:
         line_count = 0
-    
-    Rob["time"] = time
-    Rob["device"] = device
-    print(Rob)
-
-
-
-
-    print(line_count)
     line = read.readline()
+
+print(Rob)
