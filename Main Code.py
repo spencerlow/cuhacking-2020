@@ -105,7 +105,6 @@ while line != "":
                 Veronica.append(device)
                 Veronica.append(device_id)
                 Veronica.append(event)
-                Veronica.append(guest)
             if guest == "Jason":
                 Jason.append(time)
                 Jason.append(device)
@@ -206,6 +205,38 @@ def J_transfer():
 def T_transfer():
     displayData(Thomas)
 
+def R_transfer():
+    displayData(Rob)
+
+def K_transfer():
+    displayData(Kristina)
+
+def M_transfer():
+    displayData(Marc_Andre)
+
+def D_transfer():
+    displayData(Dave)
+
+def S_transfer():
+    displayData(Salina)
+
+def H_transfer():
+    displayData(Harrison)
+
+def E_transfer():
+    displayData(Eugene)
+
+def N_transfer():
+    displayData(n/a)
+
+def A_transfer():
+    displayData(alok)
+
+
+
+def T_transfer():
+    displayData(Thomas)
+
 
 def displayData(info):
     text = "test text here"
@@ -231,10 +262,11 @@ def displayData(info):
     textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid",width=9)
     textToutput.grid(row=0,column=5)
 
-    #textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
-    #textToutput.grid(row=0,column=6)
+    textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
+    textToutput.grid(row=0,column=6)
 
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
+
 
     j = 0
     for r in range(1,10):
@@ -266,7 +298,9 @@ testButton = tk.Button(text = "Jason", command = J_transfer)
 testButton.place(x=100,y=100)
 testButton = tk.Button(text = "Thomas", command = T_transfer)
 testButton.place(x=100,y=140)
-testButton = tk.Button(text = "Kristina", command = displayData)
+testButton = tk.Button(text = "Rob", command = R_transfer)
+testButton.place(x=100,y=180)
+testButton = tk.Button(text = "Kristina", command = K_transfer)
 testButton.place(x=100,y=180)
 
 
@@ -275,13 +309,13 @@ testButton.place(x=100,y=180)
 textoutput = tk.Label(window, text = "Hotel staff", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
 textoutput.place(x=300,y=20)
 
-testButton = tk.Button(text = "Marc-Andre", command = displayData)
+testButton = tk.Button(text = "Marc-Andre", command = M_transfer)
 testButton.place(x=300,y=60)
-testButton = tk.Button(text = "Dave", command = displayData)
+testButton = tk.Button(text = "Dave", command = D_transfer)
 testButton.place(x=300,y=100)
-testButton = tk.Button(text = "Salina", command = displayData)
+testButton = tk.Button(text = "Salina", command = S_transfer)
 testButton.place(x=300,y=140)
-testButton = tk.Button(text = "Harrison", command = displayData)
+testButton = tk.Button(text = "Harrison", command = H_transfer)
 testButton.place(x=300,y=180)
 
 ##random people
@@ -289,9 +323,9 @@ testButton.place(x=300,y=180)
 textoutput = tk.Label(window, text = "Unidentified", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
 textoutput.place(x=480,y=20)
 
-testButton = tk.Button(text = "Eugene", command = displayData)
+testButton = tk.Button(text = "Eugene", command = E_transfer)
 testButton.place(x=480,y=60)
-testButton = tk.Button(text = "Alok", command = displayData)
+testButton = tk.Button(text = "Alok", command = A_transfer)
 testButton.place(x=480,y=100)
 
 
