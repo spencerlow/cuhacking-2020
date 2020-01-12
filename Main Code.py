@@ -26,7 +26,7 @@ Eugene = []
 alok = []
 unknown = []
 
-def epochtotime():
+def timetoepoch():
     zeinput = input("Input time in format YYYY-MM-DD HH:MM:SS: ")
     import calendar, time; return (calendar.timegm(time.strptime(zeinput, '%Y-%m-%d %H:%M:%S')))
 
