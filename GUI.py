@@ -97,6 +97,25 @@ testButton.place(x=480,y=100)
 
 
 
+userEntry = tk.Entry(window)
+userEntry.place(x=500,y=200)
+
+
+def searchClick():
+    #SEARCH ENTRY STORES THE USER INPUT<--------------------------------------------------
+    searchEntry = userEntry.get()
+    print(searchEntry)
+    searchWindow = tk.Tk()
+    searchWindow.title("Search Window")
+    searchWindow.geometry("500x400")
+    searchWindow.resizable(False, False)
+    searchWindow.configure(background="#DA806C")
+    # tk.Text
+
+#a button that uses the function above
+tk.Button(window,text="SEARCH",command=searchClick).place(x=445,y=200)
+
+
 # new comment additional line
 
 window.mainloop()
