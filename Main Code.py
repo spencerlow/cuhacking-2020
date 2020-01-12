@@ -172,3 +172,23 @@ while line != "":
     if line_count == 6:
         line_count = 0
     line = read.readline()
+
+
+dev_room = input("Please Enter the device id or Room Number: ")
+check = False
+x = 2
+z = 4
+present = []
+freqs = {}
+while x < len(master_list):
+    if dev_room == master_list[x]:
+        if master_list[z] not in freqs:
+            freqs[master_list[z]] = master_list[z]
+            present.append(master_list[z])
+        check = True
+    x = x + 5
+    z = z + 5
+if check == False:
+    print("No ones in the room.")
+print (present)
+    
