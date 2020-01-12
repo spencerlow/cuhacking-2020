@@ -3,14 +3,13 @@ line = read.readline()
 ##This is used to store the time line with unwanted characters
 rough = []
 
-
 ##Variables to temporarily store input get reset every 5 lines
 time = " "
 device = ""
 device_id = ""
 event = ""
 guest = ""
-
+##Lists of people names
 names = {}
 Individuals = []
 Rob = []
