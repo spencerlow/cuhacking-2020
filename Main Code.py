@@ -23,6 +23,7 @@ Salina = []
 Harrison = []
 Eugene = []
 alok = []
+na = []
 unknown = []
 master_list =[]
 
@@ -173,6 +174,12 @@ while line != "":
                 alok.append(device_id)
                 alok.append(event)
                 alok.append(guest)
+            if guest == "n/a":
+                na.append(time)
+                na.append(device)
+                na.append(device_id)
+                na.append(event)
+                na.append(guest)
     ##This line resets the count
     if line_count == 6:
         line_count = 0
@@ -252,10 +259,11 @@ def N_transfer():
 def A_transfer():
     displayData(alok)
 
-
-
 def T_transfer():
     displayData(Thomas)
+
+def N_transfer():
+    displayData(na)
 
 
 def displayData(info):
@@ -348,6 +356,9 @@ testButton = tk.Button(text = "Eugene", command = E_transfer)
 testButton.place(x=480,y=60)
 testButton = tk.Button(text = "Alok", command = A_transfer)
 testButton.place(x=480,y=100)
+testButton = tk.Button(text = "N/A", command = N_transfer)
+testButton.place(x=540,y=100)
+
 
 textoutput = tk.Label(window, text = "Room or Time", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
 textoutput.place(x=450,y=150)
