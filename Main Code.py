@@ -21,6 +21,7 @@ Marc_Andre = []
 Dave = []
 Salina = []
 Harrison = []
+Eugene = []
 
 ##Variables that are used to count as timers
 line_count = 0
@@ -117,6 +118,34 @@ while line != "":
                 Marc_Andre.append(device_id)
                 Marc_Andre.append(event)
                 Marc_Andre.append(guest)
+            if guest == "Dave":
+                Dave.append(time)
+                Dave.append(device)
+                Dave.append(device_id)
+                Dave.append(event)
+                Dave.append(guest)
+            if guest == "Salina":
+                Salina.append(time)
+                Salina.append(device)
+                Salina.append(device_id)
+                Salina.append(event)
+                Salina.append(guest)
+            if guest == "Harrison":
+                Harrison.append(time)
+                Harrison.append(device)
+                Harrison.append(device_id)
+                Harrison.append(event)
+                Harrison.append(guest)
+            if guest == "Eugene":
+                Eugene.append(time)
+                Eugene.append(device)
+                Eugene.append(device_id)
+                Eugene.append(event)
+                Eugene.append(guest)
+
+
+
+
 
 
     ##This line resets the count
@@ -124,5 +153,4 @@ while line != "":
         line_count = 0
     line = read.readline()
 
-print(Rob)
-print(Veronica)
+print(Harrison)
