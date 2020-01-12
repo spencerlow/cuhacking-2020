@@ -285,25 +285,17 @@ def displayData(info):
 
     j = 0
     length = int(len(info)/5)
+
     print(length)
-    if length < 1:
-        length = 1
+    if length == 1:
+        length = 2
     for r in range(1,length):
         for c in range(1,6):
-            #if column is EVENT, have the width as larger since it needs more space, continue to next iteration
-            # print("currentJ:",j)
             if c ==4:
                 sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=25)
                 sampleGrid.grid(row=r,column=c)
                 j += 1
-                # print("currentC:",c)
                 continue
-            #     print("")
-            # print("outsideC",c)
-            # if c ==4:
-            #     sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=25)
-            #     sampleGrid.grid(row=r,column=c)
-            # else:
             sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=15)
             sampleGrid.grid(row=r,column=c)
             j += 1
@@ -323,7 +315,7 @@ testButton.place(x=100,y=60)
 
 testButton = tk.Button(text = "Jason", command = J_transfer)
 testButton.place(x=100,y=100)
-testButton = tk.Button(text = "Thomas", command = displayData )
+testButton = tk.Button(text = "Thomas", command = T_transfer )
 testButton.place(x=100,y=140)
 testButton = tk.Button(text = "Rob", command = R_transfer)
 testButton.place(x=100,y=180)
