@@ -159,11 +159,10 @@ while line != "":
                 alok.append(device_id)
                 alok.append(event)
                 alok.append(guest)
-
-
     ##This line resets the count
     if line_count == 6:
         line_count = 0
     line = read.readline()
 print(Individuals)
-print(alok)
+
+def timestamp
