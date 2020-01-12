@@ -287,7 +287,7 @@ def displayData(info):
     length = int(len(info)/5)
     print(length)
     if length < 1:
-        length = 1
+        length = 1 
     for r in range(1,length):
         for c in range(1,6):
             #if column is EVENT, have the width as larger since it needs more space, continue to next iteration
