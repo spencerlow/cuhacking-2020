@@ -203,29 +203,32 @@ def V_transfer():
 def J_transfer():
     displayData(Jason)
 
+def T_transfer():
+    displayData(Thomas)
+
 
 def displayData(info):
     text = "test text here"
     dataWindow = tk.Tk()
     dataWindow.title("Data window")
-    dataWindow.geometry("500x400")
+    dataWindow.geometry("630x400")
     dataWindow.resizable(False, False)
     dataWindow.configure(background="light grey")
 
 
-    textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat")
+    textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat",width=9)
     textToutput.grid(row=0,column=1)
 
-    textToutput = tk.Label(dataWindow, text = "Device", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "raised")
+    textToutput = tk.Label(dataWindow, text = "Device", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "raised",width=9)
     textToutput.grid(row=0,column=2)
 
-    textToutput = tk.Label(dataWindow, text = "Device ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken")
+    textToutput = tk.Label(dataWindow, text = "Device ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken",width=9)
     textToutput.grid(row=0,column=3)
 
-    textToutput = tk.Label(dataWindow, text = "Event", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "ridge")
+    textToutput = tk.Label(dataWindow, text = "Event", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "ridge",width=15)
     textToutput.grid(row=0,column=4)
 
-    textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid")
+    textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid",width=9)
     textToutput.grid(row=0,column=5)
 
     #textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
@@ -236,7 +239,13 @@ def displayData(info):
     j = 0
     for r in range(1,10):
         for c in range(1,6):
-            sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove")
+            #if column is EVENT, have the width as larger since it needs more space, continue to next iteration
+            if c ==4:
+                sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=25)
+                sampleGrid.grid(row=r,column=c)
+                j += 1
+                continue
+            sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=15)
             sampleGrid.grid(row=r,column=c)
             j += 1
         if j > 5:
