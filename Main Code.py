@@ -30,6 +30,10 @@ def timetoepoch():
     zeinput = input("Input time in format YYYY-MM-DD HH:MM:SS ")
     import calendar, time; return (calendar.timegm(time.strptime(zeinput, '%Y-%m-%d %H:%M:%S')))
 
+def epochtotime(tim1):
+    epokinput = tim1
+    import time; return (time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(epokinput)))
+
 ##Variables that are used to count as timers
 line_count = 0
 
@@ -49,6 +53,7 @@ while line != "":
                 time += rough[x]
             time = time.strip("\"")
             time = time.strip()
+            time = epochtotime(int(time))
             line_count +=1
         elif line_count == 2:
             ##Code to determine what type of access point was used
