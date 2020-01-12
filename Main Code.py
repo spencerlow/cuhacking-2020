@@ -255,7 +255,7 @@ testButton.place(x=100,y=60)
 
 testButton = tk.Button(text = "Jason", command = J_transfer)
 testButton.place(x=100,y=100)
-testButton = tk.Button(text = "Thomas", command = T_transfer)
+testButton = tk.Button(text = "Thomas", command = displayData )
 testButton.place(x=100,y=140)
 testButton = tk.Button(text = "Kristina", command = displayData)
 testButton.place(x=100,y=180)
