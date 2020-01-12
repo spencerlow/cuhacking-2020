@@ -164,5 +164,3 @@ while line != "":
         line_count = 0
     line = read.readline()
 print(Individuals)
-
-def timestamp
