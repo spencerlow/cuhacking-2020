@@ -173,4 +173,3 @@ while line != "":
         line_count = 0
     line = read.readline()
 print(Individuals)
-print(master_list)
