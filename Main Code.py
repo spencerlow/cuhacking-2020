@@ -105,6 +105,7 @@ while line != "":
                 Veronica.append(device)
                 Veronica.append(device_id)
                 Veronica.append(event)
+                Veronica.append(guest)
             if guest == "Jason":
                 Jason.append(time)
                 Jason.append(device)
@@ -221,24 +222,19 @@ def displayData(info):
     textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid")
     textToutput.grid(row=0,column=5)
 
-    textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
-    textToutput.grid(row=0,column=6)
+    #textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
+    #textToutput.grid(row=0,column=6)
 
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
 
-
-    for r in range(1,(len(info)/4)):
-        for c in range(1,2):
-            sampleGrid = tk.Label(dataWindow,text = info[0],borderwidth = 1, relief = "groove")
+    j = 0
+    for r in range(1,10):
+        for c in range(1,6):
+            sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove")
             sampleGrid.grid(row=r,column=c)
-    for r in range(1,2):
-        for c in range(2,3):
-            sampleGrid = tk.Label(dataWindow,text = info[1],borderwidth = 1, relief = "groove")
-            sampleGrid.grid(row=r,column=c)
-    for r in range(1,2):
-        for c in range (3,4):
-            sampleGrid = tk.Label(dataWindow,text = info[2],borderwidth = 1, relief = "groove")
-            sampleGrid.grid(row=r,column=c)
+            j += 1
+        if j > 5:
+            j = 0
 
 
 #Groups
@@ -253,7 +249,7 @@ testButton.place(x=100,y=60)
 
 testButton = tk.Button(text = "Jason", command = J_transfer)
 testButton.place(x=100,y=100)
-testButton = tk.Button(text = "Thomas", command = displayData)
+testButton = tk.Button(text = "Thomas", command = T_transfer)
 testButton.place(x=100,y=140)
 testButton = tk.Button(text = "Kristina", command = displayData)
 testButton.place(x=100,y=180)
