@@ -265,13 +265,9 @@ def N_transfer():
 
 def displayData(info,t,identifier):
 
-    #global variables for location memorization
-    global vIndex
-
-
     dataWindow = tk.Tk()
     dataWindow.title("Data window")
-    dataWindow.geometry("630x400")
+    dataWindow.geometry("630x620")
     dataWindow.resizable(False, False)
     dataWindow.configure(background="light grey")
 
@@ -296,13 +292,14 @@ def displayData(info,t,identifier):
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
 ##This variable is used to run through the index of each list
     j = 0
+    k = 0
 
     length = int(len(info)/5)
 ##Code to print out the proper info in the buttons
     print(length)
     if length == 1:
         length = 2
-    for r in range(1,length):
+    for r in range(1,length+1):
         for c in range(1,6):
             if c ==4:
                 sampleGrid = tk.Label(dataWindow,text = info[k],borderwidth = 1, relief = "groove",width=25)
@@ -316,12 +313,33 @@ def displayData(info,t,identifier):
             k+=1
         if j > 5:
             j = 0
-    answer = identifier + "_transfer"
-#Groups
-    navigationButtonRight = tk.Button(dataWindow,text = "->", command = ,relief = "flat",bg="red")
-    navigationButtonRight.place(x=350,y=150)
-    navigationButtonLeft = tk.Button(dataWindow,text = "<-", command = answer,relief = "flat",bg="red")
-    navigationButtonLeft.place(x=300,y=150)
+        if r == 30 or r == 60 or r == 90:
+            dataWindow = tk.Tk()
+            dataWindow.title("Data window")
+            dataWindow.geometry("630x620")
+            dataWindow.resizable(False, False)
+            dataWindow.configure(background="light grey")
+
+            textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat",width=9)
+            textToutput.grid(row=0,column=1)
+
+            textToutput = tk.Label(dataWindow, text = "Device", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "raised",width=9)
+            textToutput.grid(row=0,column=2)
+
+            textToutput = tk.Label(dataWindow, text = "ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken",width=9)
+            textToutput.grid(row=0,column=3)
+
+            textToutput = tk.Label(dataWindow, text = "Event", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "ridge",width=15)
+            textToutput.grid(row=0,column=4)
+
+            textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid",width=9)
+            textToutput.grid(row=0,column=5)
+
+            textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
+            textToutput.grid(row=0,column=6)
+
+            # info = info[9:]
+
 
 
 ##hotel guests
@@ -395,5 +413,8 @@ def searchClick():
 
 #a button that uses the function above
 tk.Button(window,text="SEARCH",command=searchClick).place(x=445,y=200)
+
+print(Marc_Andre)
+
 
 window.mainloop()
