@@ -25,6 +25,7 @@ Harrison = []
 Eugene = []
 alok = []
 unknown = []
+master_list =[]
 
 def timetoepoch():
     zeinput = input("Input time in format YYYY-MM-DD HH:MM:SS: ")
@@ -89,7 +90,12 @@ while line != "":
                 Individuals.append(guest)
 
             line_count +=1
-        ##This code assigns the users data to an individual array
+            ##This code assigns the users data to an individual array along with a master array
+            master_list.append(time)
+            master_list.append(device)
+            master_list.append(device_id)
+            master_list.append(event)
+            master_list.append(guest)
             if guest == "Rob":
                 Rob.append(time)
                 Rob.append(device)
@@ -167,3 +173,4 @@ while line != "":
         line_count = 0
     line = read.readline()
 print(Individuals)
+print(master_list)
