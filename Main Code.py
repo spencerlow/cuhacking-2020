@@ -11,7 +11,8 @@ device_id = ""
 event = ""
 guest = ""
 
-#yeet
+names = {}
+Individuals = []
 Rob = []
 Veronica = []
 Jason = []
@@ -22,6 +23,9 @@ Dave = []
 Salina = []
 Harrison = []
 Eugene = []
+alok = []
+unknown = []
+
 
 ##Variables that are used to count as timers
 line_count = 0
@@ -77,7 +81,12 @@ while line != "":
             id = id[1]
             guest = id.replace("\"", " ")
             guest = guest.strip()
+            if guest not in names:
+                names[guest] = 0
+                Individuals.append(guest)
+
             line_count +=1
+        ##This code assigns the users data to an individual array
             if guest == "Rob":
                 Rob.append(time)
                 Rob.append(device)
@@ -138,8 +147,23 @@ while line != "":
                 Eugene.append(device_id)
                 Eugene.append(event)
                 Eugene.append(guest)
+            if guest == "n/a":
+                unknown.append(time)
+                unknown.append(device)
+                unknown.append(device_id)
+                unknown.append(event)
+                unknown.append(guest)
+            if guest == "Alok":
+                alok.append(time)
+                alok.append(device)
+                alok.append(device_id)
+                alok.append(event)
+                alok.append(guest)
+
 
     ##This line resets the count
     if line_count == 6:
         line_count = 0
     line = read.readline()
+print(Individuals)
+print(alok)
