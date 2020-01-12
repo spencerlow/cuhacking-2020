@@ -294,6 +294,7 @@ def displayData(info,t,identifier):
     textToutput.grid(row=0,column=6)
 
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
+
 ##This variable is used to run through the index of each list
     j = 0
     k = 0
@@ -341,9 +342,6 @@ def displayData(info,t,identifier):
 
             textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
             textToutput.grid(row=0,column=6)
-
-            # info = info[9:]
-
 
 
 ##hotel guests
@@ -414,11 +412,7 @@ def searchClick():
     textToutput.grid(row=0,column=3)
     # tk.Text
 
-
 #a button that uses the function above
 tk.Button(window,text="SEARCH",command=searchClick).place(x=445,y=200)
-
-print(Marc_Andre)
-
 
 window.mainloop()
