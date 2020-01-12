@@ -93,6 +93,31 @@ while line != "":
                 Veronica.append(device_id)
                 Veronica.append(event)
                 Veronica.append(guest)
+            if guest == "Jason":
+                Jason.append(time)
+                Jason.append(device)
+                Jason.append(device_id)
+                Jason.append(event)
+                Jason.append(guest)
+            if guest == "Thomas":
+                Thomas.append(time)
+                Thomas.append(device)
+                Thomas.append(device_id)
+                Thomas.append(event)
+                Thomas.append(guest)
+            if guest == "Kristina":
+                Kristina.append(time)
+                Kristina.append(device)
+                Kristina.append(device_id)
+                Kristina.append(event)
+                Kristina.append(guest)
+            if guest == "Marc_Andre":
+                Marc_Andre.append(time)
+                Marc_Andre.append(device)
+                Marc_Andre.append(device_id)
+                Marc_Andre.append(event)
+                Marc_Andre.append(guest)
+
 
     ##This line resets the count
     if line_count == 6:
