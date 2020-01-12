@@ -125,7 +125,7 @@ while line != "":
                 Kristina.append(device_id)
                 Kristina.append(event)
                 Kristina.append(guest)
-            if guest == "Marc_Andre":
+            if guest == "Marc-Andre":
                 Marc_Andre.append(time)
                 Marc_Andre.append(device)
                 Marc_Andre.append(device_id)
@@ -197,6 +197,7 @@ def realatedtotime():
         if i == varb:
             return ("The device used was '" + str(master_list[counter+1]) + "' with device ID '"+ str(master_list[counter+2])+"'. The event was '" + str(master_list[counter+3]) + "' with person involved '" + str(master_list[counter+4])+"'.")
         counter+=1
+print(Marc_Andre)
 
 import tkinter as tk
 
@@ -283,7 +284,11 @@ def displayData(info):
 
 
     j = 0
-    for r in range(1,10):
+    length = int(len(info)/5)
+    print(length)
+    if length < 1:
+        length = 1
+    for r in range(1,length):
         for c in range(1,6):
             #if column is EVENT, have the width as larger since it needs more space, continue to next iteration
             # print("currentJ:",j)
