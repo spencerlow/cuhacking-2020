@@ -178,32 +178,31 @@ while line != "":
         line_count = 0
     line = read.readline()
 
-dev_room = input("Please Enter the device id or Room Number: ")
-check = False
-x = 2
-z = 4
-present = []
-freqs = {}
-while x < len(master_list):
-    if dev_room == master_list[x]:
-        if master_list[z] not in freqs:
-            freqs[master_list[z]] = master_list[z]
-            present.append(master_list[z])
-        check = True
-    x = x + 5
-    z = z + 5
-if check == False:
-    print("No ones in the room.")
-print (present)
+def check_room(searchEntry):
+    #dev_room = input("Please Enter the device id or Room Number: ")
+    check = False
+    x = 2
+    z = 4
+    present = []
+    freqs = {}
+    while x < len(master_list):
+        if searchEntry == master_list[x]:
+            if master_list[z] not in freqs:
+                freqs[master_list[z]] = master_list[z]
+                present.append(" "+master_list[z]+" ")
+            check = True
+        x = x + 5
+        z = z + 5
+    if check == False:
+        return("No ones in the room.")
+    return (present)
 
-def realatedtotime():
-    varb = input("Enter the time in epoch: ")
+def realatedtotime(varb):
     counter = 0
     for i in master_list:
         if i == varb:
-            return ("The device used was '" + str(master_list[counter+1]) + "' with device ID '"+ str(master_list[counter+2])+"'. The event was '" + str(master_list[counter+3]) + "' with person involved '" + str(master_list[counter+4])+"'.")
+            return ("Device : '" + str(master_list[counter+1]) + "' device ID : '"+ str(master_list[counter+2])+"' Event : '" + str(master_list[counter+3]) + "' By : '" + str(master_list[counter+4])+"'.")
         counter+=1
-print(Marc_Andre)
 
 import tkinter as tk
 
@@ -350,6 +349,8 @@ testButton.place(x=480,y=60)
 testButton = tk.Button(text = "Alok", command = A_transfer)
 testButton.place(x=480,y=100)
 
+textoutput = tk.Label(window, text = "Room or Time", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
+textoutput.place(x=450,y=150)
 
 userEntry = tk.Entry(window)
 userEntry.place(x=500,y=200)
@@ -358,13 +359,19 @@ userEntry.place(x=500,y=200)
 def searchClick():
     #SEARCH ENTRY STORES THE USER INPUT<--------------------------------------------------
     searchEntry = userEntry.get()
-    print(searchEntry)
+    if searchEntry.isdigit() and len(searchEntry) > 3:
+        input = realatedtotime(searchEntry)
+    else:
+        input = check_room(searchEntry)
     searchWindow = tk.Tk()
     searchWindow.title("Search Window")
-    searchWindow.geometry("500x400")
+    searchWindow.geometry("900x85")
     searchWindow.resizable(False, False)
-    searchWindow.configure(background="#DA806C")
+    searchWindow.configure(background="light grey")
+    textToutput = tk.Label(searchWindow, text = input,fg ="black", font=("Felix Titling",10,"bold"), borderwidth = 15, relief = "flat",width=90)
+    textToutput.grid(row=0,column=3)
     # tk.Text
+
 
 #a button that uses the function above
 tk.Button(window,text="SEARCH",command=searchClick).place(x=445,y=200)
