@@ -172,4 +172,3 @@ while line != "":
     if line_count == 6:
         line_count = 0
     line = read.readline()
-print(Individuals)
