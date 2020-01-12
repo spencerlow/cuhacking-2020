@@ -100,61 +100,73 @@ while line != "":
                 Rob.append(device)
                 Rob.append(device_id)
                 Rob.append(event)
+                Rob.append(guest)
             if guest == "Veronica":
                 Veronica.append(time)
                 Veronica.append(device)
                 Veronica.append(device_id)
                 Veronica.append(event)
+                Veronica.append(guest)
             if guest == "Jason":
                 Jason.append(time)
                 Jason.append(device)
                 Jason.append(device_id)
                 Jason.append(event)
+                Jason.append(guest)
             if guest == "Thomas":
                 Thomas.append(time)
                 Thomas.append(device)
                 Thomas.append(device_id)
                 Thomas.append(event)
+                Thomas.append(guest)
             if guest == "Kristina":
                 Kristina.append(time)
                 Kristina.append(device)
                 Kristina.append(device_id)
                 Kristina.append(event)
+                Kristina.append(guest)
             if guest == "Marc_Andre":
                 Marc_Andre.append(time)
                 Marc_Andre.append(device)
                 Marc_Andre.append(device_id)
                 Marc_Andre.append(event)
+                Marc_Andre.append(guest)
             if guest == "Dave":
                 Dave.append(time)
                 Dave.append(device)
                 Dave.append(device_id)
                 Dave.append(event)
+                Dave.append(guest)
             if guest == "Salina":
                 Salina.append(time)
                 Salina.append(device)
                 Salina.append(device_id)
                 Salina.append(event)
+                Salina.append(guest)
             if guest == "Harrison":
                 Harrison.append(time)
                 Harrison.append(device)
                 Harrison.append(device_id)
                 Harrison.append(event)
+                Harrison.append(guest)
             if guest == "Eugene":
                 Eugene.append(time)
                 Eugene.append(device)
                 Eugene.append(device_id)
                 Eugene.append(event)
+                Eugene.append(guest)
             if guest == "n/a":
                 unknown.append(time)
                 unknown.append(device)
                 unknown.append(device_id)
                 unknown.append(event)
+                unknown.append(guest)
             if guest == "Alok":
                 alok.append(time)
                 alok.append(device)
                 alok.append(device_id)
                 alok.append(event)
+                alok.append(guest)
     ##This line resets the count
     if line_count == 6:
         line_count = 0
@@ -253,7 +265,7 @@ def displayData(info):
     textToutput = tk.Label(dataWindow, text = "Device", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "raised",width=9)
     textToutput.grid(row=0,column=2)
 
-    textToutput = tk.Label(dataWindow, text = "Device ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken",width=9)
+    textToutput = tk.Label(dataWindow, text = "ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken",width=9)
     textToutput.grid(row=0,column=3)
 
     textToutput = tk.Label(dataWindow, text = "Event", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "ridge",width=15)
@@ -272,11 +284,19 @@ def displayData(info):
     for r in range(1,10):
         for c in range(1,6):
             #if column is EVENT, have the width as larger since it needs more space, continue to next iteration
+            # print("currentJ:",j)
             if c ==4:
                 sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=25)
                 sampleGrid.grid(row=r,column=c)
                 j += 1
+                # print("currentC:",c)
                 continue
+            #     print("")
+            # print("outsideC",c)
+            # if c ==4:
+            #     sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=25)
+            #     sampleGrid.grid(row=r,column=c)
+            # else:
             sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=15)
             sampleGrid.grid(row=r,column=c)
             j += 1
