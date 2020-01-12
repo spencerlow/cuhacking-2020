@@ -26,6 +26,9 @@ Eugene = []
 alok = []
 unknown = []
 
+def epochtotime():
+    zeinput = input("Input time in format YYYY-MM-DD HH:MM:SS: ")
+    import calendar, time; return (calendar.timegm(time.strptime(zeinput, '%Y-%m-%d %H:%M:%S')))
 
 ##Variables that are used to count as timers
 line_count = 0
