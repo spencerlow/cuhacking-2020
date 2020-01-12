@@ -190,6 +190,13 @@ window.title("Murder mystery")
 window.resizable(False, False)
 window.configure(background="light grey")
 
+def V_transfer():
+    displayData(Veronica)
+
+def J_transfer():
+    displayData(Jason)
+
+
 def displayData(info):
     text = "test text here"
     dataWindow = tk.Tk()
@@ -197,16 +204,6 @@ def displayData(info):
     dataWindow.geometry("500x400")
     dataWindow.resizable(False, False)
     dataWindow.configure(background="light grey")
-
-    #scrollbar
-    # vertBar = tk.Scrollbar(dataWindow)
-    # vertBar.pack(side="right", fill="y")
-
-    #textbox
-    # textBox = tk.Text(dataWindow, height = 10, width = 10)
-    # textBox.grid(row=0,column=0)
-
-    #entry widget
 
 
     textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat")
@@ -228,13 +225,19 @@ def displayData(info):
     textToutput.grid(row=0,column=6)
 
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
+
+
     for r in range(1,2):
         for c in range(1,2):
-            sampleGrid = tk.Label(dataWindow,text = Veronica[0],borderwidth = 1, relief = "groove")
+            sampleGrid = tk.Label(dataWindow,text = info[0],borderwidth = 1, relief = "groove")
             sampleGrid.grid(row=r,column=c)
     for r in range(1,2):
         for c in range(2,3):
-            sampleGrid = tk.Label(dataWindow,text = Veronica[1],borderwidth = 1, relief = "groove")
+            sampleGrid = tk.Label(dataWindow,text = info[1],borderwidth = 1, relief = "groove")
+            sampleGrid.grid(row=r,column=c)
+    for r in range(1,2):
+        for c in range (3,4):
+            sampleGrid = tk.Label(dataWindow,text = info[2],borderwidth = 1, relief = "groove")
             sampleGrid.grid(row=r,column=c)
 
 
@@ -245,9 +248,10 @@ def displayData(info):
 textoutput = tk.Label(window, text = "Hotel guests", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
 textoutput.place(x=100,y=20)
 
-testButton = tk.Button(text = "Veronica", command = displayData(Veronica,))
+testButton = tk.Button(text = "Veronica", command = V_transfer)
 testButton.place(x=100,y=60)
-testButton = tk.Button(text = "Jason", command = displayData)
+
+testButton = tk.Button(text = "Jason", command = J_transfer)
 testButton.place(x=100,y=100)
 testButton = tk.Button(text = "Thomas", command = displayData)
 testButton.place(x=100,y=140)
