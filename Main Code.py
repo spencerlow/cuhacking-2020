@@ -105,7 +105,6 @@ while line != "":
                 Veronica.append(device)
                 Veronica.append(device_id)
                 Veronica.append(event)
-                Veronica.append(guest)
             if guest == "Jason":
                 Jason.append(time)
                 Jason.append(device)
@@ -181,9 +180,11 @@ print (present)
 
 def realatedtotime():
     varb = input("Enter the time in epoch: ")
+    counter = 0
     for i in master_list:
-        if i == varb:
-            return ("The device was " + (i+1) +" with device id: "+(i+2)+". The event was "+(i+3)+", and person involved was "+(i+4)+".")
+        if i == varb: 
+            return ("The device used was '" + str(master_list[counter+1]) + "' with device ID '"+ str(master_list[counter+2])+"'. The event was '" + str(master_list[counter+3]) + "' with person involved '" + str(master_list[counter+4])+"'.")
+        counter+=1
 
 import tkinter as tk
 
@@ -203,40 +204,82 @@ def V_transfer():
 def J_transfer():
     displayData(Jason)
 
+def T_transfer():
+    displayData(Thomas)
+
+def R_transfer():
+    displayData(Rob)
+
+def K_transfer():
+    displayData(Kristina)
+
+def M_transfer():
+    displayData(Marc_Andre)
+
+def D_transfer():
+    displayData(Dave)
+
+def S_transfer():
+    displayData(Salina)
+
+def H_transfer():
+    displayData(Harrison)
+
+def E_transfer():
+    displayData(Eugene)
+
+def N_transfer():
+    displayData(n/a)
+
+def A_transfer():
+    displayData(alok)
+
+
+
+def T_transfer():
+    displayData(Thomas)
+
 
 def displayData(info):
     text = "test text here"
     dataWindow = tk.Tk()
     dataWindow.title("Data window")
-    dataWindow.geometry("500x400")
+    dataWindow.geometry("630x400")
     dataWindow.resizable(False, False)
     dataWindow.configure(background="light grey")
 
 
-    textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat")
+    textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat",width=9)
     textToutput.grid(row=0,column=1)
 
-    textToutput = tk.Label(dataWindow, text = "Device", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "raised")
+    textToutput = tk.Label(dataWindow, text = "Device", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "raised",width=9)
     textToutput.grid(row=0,column=2)
 
-    textToutput = tk.Label(dataWindow, text = "Device ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken")
+    textToutput = tk.Label(dataWindow, text = "Device ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken",width=9)
     textToutput.grid(row=0,column=3)
 
-    textToutput = tk.Label(dataWindow, text = "Event", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "ridge")
+    textToutput = tk.Label(dataWindow, text = "Event", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "ridge",width=15)
     textToutput.grid(row=0,column=4)
 
-    textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid")
+    textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid",width=9)
     textToutput.grid(row=0,column=5)
 
-    #textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
-    #textToutput.grid(row=0,column=6)
+    textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
+    textToutput.grid(row=0,column=6)
 
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
+
 
     j = 0
     for r in range(1,10):
         for c in range(1,6):
-            sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove")
+            #if column is EVENT, have the width as larger since it needs more space, continue to next iteration
+            if c ==4:
+                sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=25)
+                sampleGrid.grid(row=r,column=c)
+                j += 1
+                continue
+            sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=15)
             sampleGrid.grid(row=r,column=c)
             j += 1
         if j > 5:
@@ -257,7 +300,9 @@ testButton = tk.Button(text = "Jason", command = J_transfer)
 testButton.place(x=100,y=100)
 testButton = tk.Button(text = "Thomas", command = displayData )
 testButton.place(x=100,y=140)
-testButton = tk.Button(text = "Kristina", command = displayData)
+testButton = tk.Button(text = "Rob", command = R_transfer)
+testButton.place(x=100,y=180)
+testButton = tk.Button(text = "Kristina", command = K_transfer)
 testButton.place(x=100,y=180)
 
 
@@ -266,13 +311,13 @@ testButton.place(x=100,y=180)
 textoutput = tk.Label(window, text = "Hotel staff", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
 textoutput.place(x=300,y=20)
 
-testButton = tk.Button(text = "Marc-Andre", command = displayData)
+testButton = tk.Button(text = "Marc-Andre", command = M_transfer)
 testButton.place(x=300,y=60)
-testButton = tk.Button(text = "Dave", command = displayData)
+testButton = tk.Button(text = "Dave", command = D_transfer)
 testButton.place(x=300,y=100)
-testButton = tk.Button(text = "Salina", command = displayData)
+testButton = tk.Button(text = "Salina", command = S_transfer)
 testButton.place(x=300,y=140)
-testButton = tk.Button(text = "Harrison", command = displayData)
+testButton = tk.Button(text = "Harrison", command = H_transfer)
 testButton.place(x=300,y=180)
 
 ##random people
@@ -280,9 +325,9 @@ testButton.place(x=300,y=180)
 textoutput = tk.Label(window, text = "Unidentified", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
 textoutput.place(x=480,y=20)
 
-testButton = tk.Button(text = "Eugene", command = displayData)
+testButton = tk.Button(text = "Eugene", command = E_transfer)
 testButton.place(x=480,y=60)
-testButton = tk.Button(text = "Alok", command = displayData)
+testButton = tk.Button(text = "Alok", command = A_transfer)
 testButton.place(x=480,y=100)
 
 
