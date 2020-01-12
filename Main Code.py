@@ -173,7 +173,6 @@ while line != "":
         line_count = 0
     line = read.readline()
 
-
 dev_room = input("Please Enter the device id or Room Number: ")
 check = False
 x = 2
@@ -191,4 +190,3 @@ while x < len(master_list):
 if check == False:
     print("No ones in the room.")
 print (present)
-    
