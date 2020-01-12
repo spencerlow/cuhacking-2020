@@ -182,7 +182,7 @@ def realatedtotime():
     varb = input("Enter the time in epoch: ")
     counter = 0
     for i in master_list:
-        if i == varb: 
+        if i == varb:
             return ("The device used was '" + str(master_list[counter+1]) + "' with device ID '"+ str(master_list[counter+2])+"'. The event was '" + str(master_list[counter+3]) + "' with person involved '" + str(master_list[counter+4])+"'.")
         counter+=1
 
