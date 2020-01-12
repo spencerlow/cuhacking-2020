@@ -178,6 +178,12 @@ if check == False:
     print("No ones in the room.")
 print (present)
 
+def realatedtotime():
+    varb = input("Enter the time in epoch: ")
+    for i in master_list:
+        if i == varb:
+            return ("The device was " + (i+1) +" with device id: "+(i+2)+". The event was "+(i+3)+", and person involved was "+(i+4)+".")
+
 import tkinter as tk
 
 
