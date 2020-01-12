@@ -100,3 +100,4 @@ while line != "":
     line = read.readline()
 
 print(Rob)
+print(Veronica)
