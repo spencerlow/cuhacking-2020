@@ -1,3 +1,4 @@
+
 read = open("Murder-on-the-2nd-Floor-Raw-Data.json", "r")
 line = read.readline()
 ##This is used to store the time line with unwanted characters
@@ -223,57 +224,56 @@ window.title("Murder mystery")
 window.resizable(False, False)
 window.configure(background="light grey")
 
+vIndex = 1
+
 def V_transfer():
-    displayData(Veronica)
+    print("success")
+    displayData(Veronica,0,"V")
 
 def J_transfer():
-    displayData(Jason)
+    displayData(Jason,0,"J")
 
 def T_transfer():
-    displayData(Thomas)
+    displayData(Thomas,0,"T")
 
 def R_transfer():
-    displayData(Rob)
+    displayData(Rob,0,"R")
 
 def K_transfer():
-    displayData(Kristina)
+    displayData(Kristina,0,"K")
 
 def M_transfer():
-    displayData(Marc_Andre)
+    displayData(Marc_Andre,0,"M")
 
 def D_transfer():
-    displayData(Dave)
+    displayData(Dave,0,"D")
 
 def S_transfer():
-    displayData(Salina)
+    displayData(Salina,0,"S")
 
 def H_transfer():
-    displayData(Harrison)
+    displayData(Harrison,0,"H")
 
 def E_transfer():
-    displayData(Eugene)
-
-def N_transfer():
-    displayData(n/a)
+    displayData(Eugene,0,"E")
 
 def A_transfer():
-    displayData(alok)
-
-def T_transfer():
-    displayData(Thomas)
+    displayData(alok,0,"A")
 
 def N_transfer():
-    displayData(na)
+    displayData(na,0,"N")
+
+def displayData(info,t,identifier):
+
+    #global variables for location memorization
+    global vIndex
 
 
-def displayData(info):
-    text = "test text here"
     dataWindow = tk.Tk()
     dataWindow.title("Data window")
     dataWindow.geometry("630x400")
     dataWindow.resizable(False, False)
     dataWindow.configure(background="light grey")
-
 
     textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat",width=9)
     textToutput.grid(row=0,column=1)
@@ -296,6 +296,7 @@ def displayData(info):
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
 ##This variable is used to run through the index of each list
     j = 0
+
     length = int(len(info)/5)
 ##Code to print out the proper info in the buttons
     print(length)
@@ -304,16 +305,24 @@ def displayData(info):
     for r in range(1,length):
         for c in range(1,6):
             if c ==4:
-                sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=25)
+                sampleGrid = tk.Label(dataWindow,text = info[k],borderwidth = 1, relief = "groove",width=25)
                 sampleGrid.grid(row=r,column=c)
                 j += 1
+                k += 1
                 continue
-            sampleGrid = tk.Label(dataWindow,text = info[j],borderwidth = 1, relief = "groove",width=15)
+            sampleGrid = tk.Label(dataWindow,text = info[k],borderwidth = 1, relief = "groove",width=15)
             sampleGrid.grid(row=r,column=c)
             j += 1
+            k+=1
         if j > 5:
             j = 0
+    answer = identifier + "_transfer"
 #Groups
+    navigationButtonRight = tk.Button(dataWindow,text = "->", command = ,relief = "flat",bg="red")
+    navigationButtonRight.place(x=350,y=150)
+    navigationButtonLeft = tk.Button(dataWindow,text = "<-", command = answer,relief = "flat",bg="red")
+    navigationButtonLeft.place(x=300,y=150)
+
 
 ##hotel guests
 ###Veronica, Jason, Thomas, Rob, Kristina
