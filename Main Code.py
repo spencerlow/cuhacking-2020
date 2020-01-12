@@ -265,8 +265,6 @@ def T_transfer():
 def N_transfer():
     displayData(na)
 
-def Pg_down():
-
 
 def displayData(info):
     text = "test text here"
@@ -276,7 +274,6 @@ def displayData(info):
     dataWindow.resizable(False, False)
     dataWindow.configure(background="light grey")
 
-    testButton = tk.Button(text = "PG DN", command = )
 
     textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat",width=9)
     textToutput.grid(row=0,column=1)
