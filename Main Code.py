@@ -100,73 +100,61 @@ while line != "":
                 Rob.append(device)
                 Rob.append(device_id)
                 Rob.append(event)
-                Rob.append(guest)
             if guest == "Veronica":
                 Veronica.append(time)
                 Veronica.append(device)
                 Veronica.append(device_id)
                 Veronica.append(event)
-                Veronica.append(guest)
             if guest == "Jason":
                 Jason.append(time)
                 Jason.append(device)
                 Jason.append(device_id)
                 Jason.append(event)
-                Jason.append(guest)
             if guest == "Thomas":
                 Thomas.append(time)
                 Thomas.append(device)
                 Thomas.append(device_id)
                 Thomas.append(event)
-                Thomas.append(guest)
             if guest == "Kristina":
                 Kristina.append(time)
                 Kristina.append(device)
                 Kristina.append(device_id)
                 Kristina.append(event)
-                Kristina.append(guest)
             if guest == "Marc_Andre":
                 Marc_Andre.append(time)
                 Marc_Andre.append(device)
                 Marc_Andre.append(device_id)
                 Marc_Andre.append(event)
-                Marc_Andre.append(guest)
             if guest == "Dave":
                 Dave.append(time)
                 Dave.append(device)
                 Dave.append(device_id)
                 Dave.append(event)
-                Dave.append(guest)
             if guest == "Salina":
                 Salina.append(time)
                 Salina.append(device)
                 Salina.append(device_id)
                 Salina.append(event)
-                Salina.append(guest)
             if guest == "Harrison":
                 Harrison.append(time)
                 Harrison.append(device)
                 Harrison.append(device_id)
                 Harrison.append(event)
-                Harrison.append(guest)
             if guest == "Eugene":
                 Eugene.append(time)
                 Eugene.append(device)
                 Eugene.append(device_id)
                 Eugene.append(event)
-                Eugene.append(guest)
             if guest == "n/a":
                 unknown.append(time)
                 unknown.append(device)
                 unknown.append(device_id)
                 unknown.append(event)
-                unknown.append(guest)
             if guest == "Alok":
                 alok.append(time)
                 alok.append(device)
                 alok.append(device_id)
                 alok.append(event)
-                alok.append(guest)
     ##This line resets the count
     if line_count == 6:
         line_count = 0
@@ -189,3 +177,113 @@ while x < len(master_list):
 if check == False:
     print("No ones in the room.")
 print (present)
+
+import tkinter as tk
+
+
+# window = TK()
+# window.title("test")
+
+window = tk.Tk()
+window.geometry("700x250")
+window.title("Murder mystery")
+window.resizable(False, False)
+window.configure(background="light grey")
+
+def displayData(info):
+    text = "test text here"
+    dataWindow = tk.Tk()
+    dataWindow.title("Data window")
+    dataWindow.geometry("500x400")
+    dataWindow.resizable(False, False)
+    dataWindow.configure(background="light grey")
+
+    #scrollbar
+    # vertBar = tk.Scrollbar(dataWindow)
+    # vertBar.pack(side="right", fill="y")
+
+    #textbox
+    # textBox = tk.Text(dataWindow, height = 10, width = 10)
+    # textBox.grid(row=0,column=0)
+
+    #entry widget
+
+
+    textToutput = tk.Label(dataWindow, text = "Time", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "flat")
+    textToutput.grid(row=0,column=1)
+
+    textToutput = tk.Label(dataWindow, text = "Device", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "raised")
+    textToutput.grid(row=0,column=2)
+
+    textToutput = tk.Label(dataWindow, text = "Device ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "sunken")
+    textToutput.grid(row=0,column=3)
+
+    textToutput = tk.Label(dataWindow, text = "Event", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "ridge")
+    textToutput.grid(row=0,column=4)
+
+    textToutput = tk.Label(dataWindow, text = "Guest ID", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "solid")
+    textToutput.grid(row=0,column=5)
+
+    textToutput = tk.Label(dataWindow, text = "EXTRA", fg="red", font=("Helvetica",16),borderwidth = 1, relief = "groove")
+    textToutput.grid(row=0,column=6)
+
+    sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
+    for r in range(1,2):
+        for c in range(1,2):
+            sampleGrid = tk.Label(dataWindow,text = Veronica[0],borderwidth = 1, relief = "groove")
+            sampleGrid.grid(row=r,column=c)
+    for r in range(1,2):
+        for c in range(2,3):
+            sampleGrid = tk.Label(dataWindow,text = Veronica[1],borderwidth = 1, relief = "groove")
+            sampleGrid.grid(row=r,column=c)
+
+
+#Groups
+
+##hotel guests
+###Veronica, Jason, Thomas, Rob, Kristina
+textoutput = tk.Label(window, text = "Hotel guests", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
+textoutput.place(x=100,y=20)
+
+testButton = tk.Button(text = "Veronica", command = displayData(Veronica,))
+testButton.place(x=100,y=60)
+testButton = tk.Button(text = "Jason", command = displayData)
+testButton.place(x=100,y=100)
+testButton = tk.Button(text = "Thomas", command = displayData)
+testButton.place(x=100,y=140)
+testButton = tk.Button(text = "Kristina", command = displayData)
+testButton.place(x=100,y=180)
+
+
+##hotel staff
+###Marc-Andre,Dave,Salina,Harrison
+textoutput = tk.Label(window, text = "Hotel staff", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
+textoutput.place(x=300,y=20)
+
+testButton = tk.Button(text = "Marc-Andre", command = displayData)
+testButton.place(x=300,y=60)
+testButton = tk.Button(text = "Dave", command = displayData)
+testButton.place(x=300,y=100)
+testButton = tk.Button(text = "Salina", command = displayData)
+testButton.place(x=300,y=140)
+testButton = tk.Button(text = "Harrison", command = displayData)
+testButton.place(x=300,y=180)
+
+##random people
+###eugune???
+textoutput = tk.Label(window, text = "Unidentified", bg="dark grey" ,fg="black", font=("Felix Titling",16,"bold"))
+textoutput.place(x=480,y=20)
+
+testButton = tk.Button(text = "Eugene", command = displayData)
+testButton.place(x=480,y=60)
+testButton = tk.Button(text = "Alok", command = displayData)
+testButton.place(x=480,y=100)
+
+
+
+# new comment additional line
+
+window.mainloop()
+
+# if __name__ == "__main__":
+#     window.mainloop()
