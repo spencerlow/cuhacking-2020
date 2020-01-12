@@ -43,7 +43,6 @@ while line != "":
             time = time.strip("\"")
             time = time.strip()
             line_count +=1
-            print(time)
         elif line_count == 2:
             ##Code to determine what type of access point was used
             if line.find("access") != -1:
@@ -55,7 +54,6 @@ while line != "":
             elif line.find("phone") != -1:
                 device = "phone"
             line_count +=1
-            print(device)
         elif line_count == 3:
             ##This code seperates Device Id into a usuable format
             id = line.split()
@@ -64,7 +62,6 @@ while line != "":
             device_id = device_id.strip("\"")
             device_id = device_id.strip("")
             line_count +=1
-            print(device_id)
         elif line_count == 4:
             ##This code seperates event into usuable format
             id = line.split(":")
@@ -74,7 +71,6 @@ while line != "":
             event = event.replace("\""," ")
             event = event.rstrip()
             line_count +=1
-            print(event)
         elif line_count == 5:
             ##This code gets the name of the person
             id = line.split(":")
@@ -143,14 +139,7 @@ while line != "":
                 Eugene.append(event)
                 Eugene.append(guest)
 
-
-
-
-
-
     ##This line resets the count
     if line_count == 6:
         line_count = 0
     line = read.readline()
-
-print(Harrison)
