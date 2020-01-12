@@ -227,7 +227,7 @@ def displayData(info):
     sampleGrid = tk.Label(dataWindow,text = "-------",borderwidth = 1, relief = "groove")
 
 
-    for r in range(1,2):
+    for r in range(1,(len(info)/4)):
         for c in range(1,2):
             sampleGrid = tk.Label(dataWindow,text = info[0],borderwidth = 1, relief = "groove")
             sampleGrid.grid(row=r,column=c)
@@ -284,8 +284,23 @@ testButton = tk.Button(text = "Alok", command = displayData)
 testButton.place(x=480,y=100)
 
 
+userEntry = tk.Entry(window)
+userEntry.place(x=500,y=200)
 
-# new comment additional line
+
+def searchClick():
+    #SEARCH ENTRY STORES THE USER INPUT<--------------------------------------------------
+    searchEntry = userEntry.get()
+    print(searchEntry)
+    searchWindow = tk.Tk()
+    searchWindow.title("Search Window")
+    searchWindow.geometry("500x400")
+    searchWindow.resizable(False, False)
+    searchWindow.configure(background="#DA806C")
+    # tk.Text
+
+#a button that uses the function above
+tk.Button(window,text="SEARCH",command=searchClick).place(x=445,y=200)
 
 window.mainloop()
 
