@@ -9,3 +9,6 @@ Andrew Hall | https://github.com/ANDRANIAC
 Atharva Kasture | https://github.com/Atharva-Kasture
 Mitansh Desai | https://github.com/lLias
 Spencer Low | https://github.com/spencerlow
+
+![Menu](/sampleMenu.png)
+![Organized data](/sampleTable.png)
