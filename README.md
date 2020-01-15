@@ -1,5 +1,5 @@
 # cuhacking-2020
-## This is a repository for a team project during cuhacking 2020. Objective to create a program for the *Martello murder mystery challenge* in 24 hours.
+## This is a repository for a team project during cuhacking 2020. Objective to create a program for the *Martello murder mystery challenge* in 24 hours while also learning how to use Github for the first time in a group setting.
 
 Written in Python with Tkinter for GUI to display organized data for the user.
 
