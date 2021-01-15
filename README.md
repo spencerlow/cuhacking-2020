@@ -7,7 +7,7 @@ Members | Github
 ------------ | -------------
 Andrew Hall | https://github.com/ANDRANIAC
 Atharva Kasture | https://github.com/Atharva-Kasture
-Mitansh Desai | https://github.com/lLias
+Mitansh Desai | https://github.com/zer0plus
 Spencer Low | https://github.com/spencerlow
 
 ![Menu](/sampleMenu.png)
