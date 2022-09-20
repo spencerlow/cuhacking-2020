@@ -5,7 +5,7 @@ Written in Python and with Tkinter for GUI to display organized data for the use
 
 Members | Github
 ------------ | -------------
-Andrew Hall | https://github.com/ANDRANIAC
+Andrew Hall | https://github.com/Hall-Andrew
 Atharva Kasture | https://github.com/Atharva-Kasture
 Mitansh Desai | https://github.com/zer0plus
 Spencer Low | https://github.com/spencerlow
